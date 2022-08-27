@@ -1,0 +1,39 @@
+{
+  "name": "test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "vbuild": "vue-cli-service build",
+    "start": "nodemon --watch ./src -e html,js,css,scss,vue --exec \"npm run build\" ",
+    "build": "parcel build --no-scope-hoist ./src/index.html --dist-dir ./appsscript && npm run clean",
+    "clean": "rimraf ./appsscript/*.css  ./appsscript/*.map",
+    "sass":"sass --watch src/assets/scss/:src/assets/css/",
+    "glogin": "clasp login",
+    "glogout": "clasp logout",
+    "gpull": "clasp pull",
+    "gpush": "clasp deploy --deploymentId  AKfycbz_zhsVXofIQVxu4nsLnqOWqF3_naFUyr6ZHOKWOOY --versionNumber 0 ",
+    "gcreate": "clasp create --title \"test\" --rootDir ./appsscript",
+    "gstart": "clasp push --watch",
+    "gopen": "clasp open --webapp",
+    "ghelp": "clasp --help",
+    "gdeploys": "clasp deployments"
+  },
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.54",
+    "core-js": "^3.8.3",
+    "nodemon": "^2.0.19",
+    "vue": "^3.2.13"
+  },
+  "devDependencies": {
+    "@parcel/transformer-vue": "^2.7.0",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "concurrently": "^7.3.0",
+    "parcel": "^2.7.0",
+    "parcel-resolver-ignore": "^2.1.3",
+    "rimraf": "^3.0.2",
+    "sass": "^1.54.5",
+    "sass-loader": "^13.0.2"
+  }
+}
